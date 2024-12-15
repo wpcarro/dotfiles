@@ -24,11 +24,12 @@ let
         less
         nix
         openssh
-        sudo
         ripgrep 
         vim
         which
-      ])}
+      ] ++ (if builtins.currentSystem == "x86_64-linux" then [
+        sudo
+      ] else []))}
 
       alias m='cd ~/programming/matrix'
       alias client='cd ~/programming/matrix/client'
