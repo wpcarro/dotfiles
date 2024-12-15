@@ -11,6 +11,7 @@ let
     bashrc = pkgs.writeText "bashrc" ''
       export PATH=${pkgs.lib.makeBinPath (with pkgs; [
         coreutils 
+        curl
         direnv 
         emacs
         findutils 
@@ -22,6 +23,7 @@ let
         gnused 
         gnutar 
         gzip
+        httpie
         less
         nix
         openssh
