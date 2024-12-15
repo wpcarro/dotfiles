@@ -21,6 +21,7 @@ let
         gnused 
         gnutar 
         nix
+        openssh
         ripgrep 
         vim
         which
