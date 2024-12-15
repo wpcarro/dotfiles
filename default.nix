@@ -40,6 +40,7 @@ let
       alias qms='cd ~/programming/hadrian/flow/qms'
 
       alias d='cd ~/programming/depot'
+      alias billpkgs='cd ~/programming/billpkgs'
 
       alias eb='vim ~/programming/billpkgs/default.nix'
       alias sbl='source $(nix-build ~/programming/billpkgs -A billpkgs.bashrc --no-out-link)'
