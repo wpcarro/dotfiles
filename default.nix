@@ -41,7 +41,7 @@ let
       alias billpkgs='cd ~/programming/billpkgs'
 
       alias eb='vim ~/programming/billpkgs/default.nix'
-      alias sbl='nix-env -f ~/programming/billpkgs -iA billpkgs.shell && exec billsh'
+      alias sb='nix-env -f ~/programming/billpkgs -iA billpkgs.shell && exec billsh'
       alias la='ls -al'
       alias rgh='rg --hidden'
       alias tpr='tput reset'
