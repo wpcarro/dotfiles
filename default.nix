@@ -27,6 +27,7 @@ let
         less
         nix
         openssh
+        sudo
         ripgrep 
         vim
         which
