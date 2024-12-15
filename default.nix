@@ -72,6 +72,7 @@ let
       # apps
       eval "$(fzf --bash)"
       eval "$(direnv hook bash)"
+      source $HOME/.nix-profile/etc/profile.d/nix.sh
 
       # prompt
       export PS1="\w\nλ "
