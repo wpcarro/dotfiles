@@ -27,8 +27,6 @@ let
         which
       ])}
 
-      echo hello
-
       alias m='cd ~/programming/matrix'
       alias client='cd ~/programming/matrix/client'
       alias server='cd ~/programming/matrix/server'
