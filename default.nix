@@ -71,7 +71,7 @@ let
       source $HOME/.nix-profile/etc/profile.d/nix.sh
 
       # prompt
-      export PS1="\w\nλ "
+      export PS1="[\u@\h] \w\n\t λ "
     '';
 
     shell = pkgs.writeShellScriptBin "billsh" ''
