@@ -17,6 +17,7 @@ let
         fzf 
         gawk 
         git
+        gitui
         gnugrep 
         gnused 
         gnutar 
