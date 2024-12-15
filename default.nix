@@ -27,6 +27,7 @@ let
         ripgrep 
         vim
         which
+        depot.users.wpcarro.tools.simple_vim
       ])}:$PATH
 
       alias m='cd ~/programming/matrix'
@@ -64,6 +65,10 @@ let
       alias gc='git commit'
       alias gp='git push'
       alias gpr='gh pr create --title="$(git log -1 --format=%s)" --body="$(git log -1 --format=%b)"'
+
+      alias vim='simple_vim'
+      export EDITOR='simple_vim'
+      export GIT_EDITOR=$EDITOR
 
       # apps
       eval "$(fzf --bash)"
