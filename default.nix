@@ -2,10 +2,6 @@ let
   sources = import ./third_party/sources/sources.nix;
   depot = import sources.depot { };
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
-
-  bashrc = pkgs.writeText "bashrc" ''
-    alias rgh="rg --hidden"
-  '';
   
   billpkgs = pkgs.lib.fix (self: {
     bashrc = pkgs.writeText "bashrc" ''
