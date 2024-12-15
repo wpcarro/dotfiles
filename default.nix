@@ -27,9 +27,7 @@ let
         ripgrep 
         vim
         which
-      ] ++ (if builtins.currentSystem == "x86_64-linux" then [
-        sudo
-      ] else []))}
+      ])}:$PATH
 
       alias m='cd ~/programming/matrix'
       alias client='cd ~/programming/matrix/client'
