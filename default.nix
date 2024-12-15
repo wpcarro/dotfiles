@@ -23,6 +23,7 @@ let
         gnused 
         gnutar 
         gzip
+        hostname
         httpie
         less
         nix
