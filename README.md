@@ -1,5 +1,5 @@
-# billpkgs
+# dotfiles
 
 ```shell
-$ nix-env -f https://github.com/wpcarro/billpkgs -iA billpkgs.shell
+$ nix-env -f https://github.com/wpcarro/dotfiles -iA dotfiles.shell
 ```

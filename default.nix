@@ -3,7 +3,7 @@ let
   depot = import sources.depot { };
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
   
-  billpkgs = pkgs.lib.fix (self: {
+  dotfiles = pkgs.lib.fix (self: {
     bashrc = pkgs.writeText "bashrc" ''
       export PATH=${pkgs.lib.makeBinPath (with pkgs; [
         coreutils 
@@ -38,10 +38,10 @@ let
       alias qms='cd ~/programming/hadrian/flow/qms'
 
       alias d='cd ~/programming/depot'
-      alias billpkgs='cd ~/programming/billpkgs'
+      alias dotfiles='cd ~/programming/dotfiles'
 
-      alias eb='vim ~/programming/billpkgs/default.nix'
-      alias sb='nix-env -f ~/programming/billpkgs -iA billpkgs.shell && exec billsh'
+      alias eb='vim ~/programming/dotfiles/default.nix'
+      alias sb='nix-env -f ~/programming/dotfiles -iA dotfiles.shell && exec billsh'
       alias la='ls -al'
       alias rgh='rg --hidden'
       alias tpr='tput reset'
@@ -80,5 +80,5 @@ let
   });
 in
 {
-  inherit pkgs billpkgs;
+  inherit pkgs dotfiles;
 }
