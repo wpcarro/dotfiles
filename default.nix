@@ -21,6 +21,7 @@ let
         gnugrep 
         gnused 
         gnutar 
+        gzip
         less
         nix
         openssh
@@ -40,7 +41,8 @@ let
       alias d='cd ~/programming/depot'
 
       alias eb='vim ~/programming/billpkgs/default.nix'
-      alias sb='source $(nix-build ~/programming/billpkgs -A billpkgs.bashrc --no-out-link)'
+      alias sbl='source $(nix-build ~/programming/billpkgs -A billpkgs.bashrc --no-out-link)'
+      alias sbr='source $(nix-build https://github.com/wpcarro/billpkgs/archive/main.tar.gz -A billpkgs.bashrc --no-out-link)'
       alias la='ls -al'
       alias rgh='rg --hidden'
       alias tpr='tput reset'
