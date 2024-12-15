@@ -20,6 +20,7 @@ let
         gnugrep 
         gnused 
         gnutar 
+        less
         nix
         openssh
         ripgrep 
