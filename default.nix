@@ -54,7 +54,7 @@ let
       alias gd='git diff'
       alias gco='git checkout'
       alias gcb='git checkout -b'
-      alias gprom='git pull --rebase origin main'
+      alias gprom='git pull --rebase origin HEAD'
       alias gfrom='git rebase -i --autosquash origin/main'
       alias grbc='git rebase --continue'
       alias grh='git reset --hard'
