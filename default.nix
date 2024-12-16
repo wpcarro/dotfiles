@@ -6,13 +6,16 @@ let
   dotfiles = pkgs.lib.fix (self: {
     bashrc = pkgs.writeText "bashrc" ''
       export PATH=${pkgs.lib.makeBinPath (with pkgs; [
+        age
         coreutils 
         curl
         direnv 
         emacs
+        fd
         findutils 
         fzf 
         gawk 
+        gh
         git
         gitui
         gnugrep 
