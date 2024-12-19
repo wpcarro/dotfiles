@@ -4,6 +4,35 @@ let
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
   
   dotfiles = pkgs.lib.fix (self: {
+    path = pkgs.lib.makeBinPath (with pkgs; [
+      age
+      coreutils 
+      curl
+      direnv 
+      emacs
+      fd
+      findutils 
+      fzf 
+      gawk 
+      gh
+      git
+      gitui
+      gnugrep 
+      gnused 
+      gnutar 
+      gzip
+      hostname
+      httpie
+      less
+      nix
+      openssh
+      ripgrep 
+      tree
+      vim
+      which
+      wrk
+      depot.users.wpcarro.tools.simple_vim
+    ]);
     colors = {
       yellow = x: "\\033[0;33m${x}\\033[0m";
       pink = x: "\\033[0;35m${x}\\033[0m";
@@ -13,33 +42,7 @@ let
       white = x: "\\033[0;37m${x}\\033[0m";
     };
     bashrc = pkgs.writeText "bashrc" ''
-      export PATH=${pkgs.lib.makeBinPath (with pkgs; [
-        age
-        coreutils 
-        curl
-        direnv 
-        emacs
-        fd
-        findutils 
-        fzf 
-        gawk 
-        gh
-        git
-        gitui
-        gnugrep 
-        gnused 
-        gnutar 
-        gzip
-        hostname
-        httpie
-        less
-        nix
-        openssh
-        ripgrep 
-        vim
-        which
-        depot.users.wpcarro.tools.simple_vim
-      ])}:$PATH
+      export PATH=${self.path}:${if true then "/opt/homebrew/bin:$PATH" else "$PATH"}
 
       alias m='cd ~/programming/matrix'
       alias client='cd ~/programming/matrix/client'
