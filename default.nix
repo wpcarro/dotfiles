@@ -6,6 +6,7 @@ let
   dotfiles = pkgs.lib.fix (self: {
     path = pkgs.lib.makeBinPath (with pkgs; [
       age
+      atuin 
       coreutils 
       curl
       direnv 
@@ -89,6 +90,8 @@ let
       eval "$(fzf --bash)"
       eval "$(direnv hook bash)"
       source $HOME/.nix-profile/etc/profile.d/nix.sh
+      source ${pkgs.bash-preexec}/share/bash/bash-preexec.sh
+      eval "$(atuin init bash)"
 
       # prompt
       export PS1="${self.colors.red "["}${self.colors.blue "\\u"}${self.colors.yellow "@"}${self.colors.magenta "\\h"}${self.colors.red "]"} ${self.colors.cyan "\\w"}\n\t ${self.colors.cyan "λ"} "
