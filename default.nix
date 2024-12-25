@@ -29,6 +29,7 @@ let
       nix
       openssh
       ripgrep 
+      tokei
       tree
       vim
       which
