@@ -73,6 +73,7 @@ let
       alias gcan='git commit --amend --no-edit'
       alias gca='git commit --amend'
       alias gcf='git commit --fixup'
+      alias gcp='git cherry-pick'
       alias gds='git diff --staged'
       alias gsh='git show HEAD'
       alias gc='git commit'
