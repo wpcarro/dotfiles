@@ -24,6 +24,7 @@ let
       hostname
       httpie
       less
+      netcat
       nix
       openssh
       ripgrep 
