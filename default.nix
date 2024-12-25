@@ -34,11 +34,11 @@ let
       depot.users.wpcarro.tools.simple_vim
     ]);
     colors = {
-      yellow = x: ''\[\033[0;33m${x}\033[0m\]'';
-      pink = x:   ''\[\033[0;35m${x}\033[0m\]'';
-      cyan = x:   ''\[\033[0;36m${x}\033[0m\]'';
-      blue = x:   ''\[\033[0;34m${x}\033[0m\]'';
-      red = x:    ''\[\033[0;31m${x}\033[0m\]'';
+      yellow  = x: "[38;5;3m${x}[m";
+      magenta = x: "[38;5;5m${x}[m";
+      cyan    = x: "[38;5;6m${x}[m";
+      blue    = x: "[38;5;4m${x}[m";
+      red     = x: "[38;5;1m${x}[m";
     };
     bashrc = pkgs.writeText "bashrc" ''
       export PATH=${self.path}:${if true then "/opt/homebrew/bin:$PATH" else "$PATH"}
@@ -90,7 +90,7 @@ let
       source $HOME/.nix-profile/etc/profile.d/nix.sh
 
       # prompt
-      export PS1="${self.colors.red "["}${self.colors.blue "\\u"}${self.colors.yellow "@"}${self.colors.pink "\\h"}${self.colors.red "]"} ${self.colors.cyan "\\w"}\n\t ${self.colors.cyan "λ"} "
+      export PS1="${self.colors.red "["}${self.colors.blue "\\u"}${self.colors.yellow "@"}${self.colors.magenta "\\h"}${self.colors.red "]"} ${self.colors.cyan "\\w"}\n\t ${self.colors.cyan "λ"} "
     '';
 
     shell = pkgs.writeShellScriptBin "billsh" ''
