@@ -22,6 +22,7 @@ let
       gnused 
       gnutar 
       gzip
+      hexyl
       hostname
       httpie
       less
@@ -34,14 +35,15 @@ let
       vim
       which
       wrk
+      zellij
       depot.users.wpcarro.tools.simple_vim
     ]);
     colors = {
-      yellow  = x: "[38;5;3m${x}[m";
-      magenta = x: "[38;5;5m${x}[m";
-      cyan    = x: "[38;5;6m${x}[m";
-      blue    = x: "[38;5;4m${x}[m";
-      red     = x: "[38;5;1m${x}[m";
+      yellow  = x: x;
+      magenta = x: x;
+      cyan    = x: x;
+      blue    = x: x;
+      red     = x: x;
     };
     bashrc = pkgs.writeText "bashrc" ''
       export PATH=${self.path}:${if true then "/opt/homebrew/bin:$PATH" else "$PATH"}
@@ -49,6 +51,7 @@ let
       alias m='cd ~/programming/matrix'
       alias client='cd ~/programming/matrix/client'
       alias server='cd ~/programming/matrix/server'
+      alias galapagos='cd ~/programming/galapagos'
 
       alias h='cd ~/programming/hadrian'
       alias bbom='cd ~/programming/hadrian/factory/bbom'
@@ -67,7 +70,7 @@ let
       alias gd='git diff'
       alias gco='git checkout'
       alias gcb='git checkout -b'
-      alias gprom='git pull --rebase origin HEAD'
+      alias gprom='git pull --rebase origin main'
       alias gfrom='git rebase -i --autosquash origin/main'
       alias grbc='git rebase --continue'
       alias grh='git reset --hard'
@@ -88,7 +91,6 @@ let
       export GIT_EDITOR=$EDITOR
 
       # apps
-      eval "$(fzf --bash)"
       eval "$(direnv hook bash)"
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source ${pkgs.bash-preexec}/share/bash/bash-preexec.sh
