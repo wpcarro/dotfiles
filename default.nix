@@ -12,6 +12,7 @@ let
       curl
       direnv 
       emacs
+      entr
       fd
       findutils 
       fzf 
@@ -26,13 +27,17 @@ let
       hexyl
       hostname
       httpie
+      jq
+      jsonnet
       less
       netcat
       nix
+      nmap
       openssh
       ripgrep 
       tokei
       tree
+      tshark
       vim
       which
       wrk
