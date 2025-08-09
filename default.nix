@@ -55,15 +55,9 @@ let
       export PATH=${self.path}:${if true then "/opt/homebrew/bin:$PATH" else "$PATH"}
 
       alias m='cd ~/programming/matrix'
-      alias client='cd ~/programming/matrix/client'
-      alias server='cd ~/programming/matrix/server'
-      alias galapagos='cd ~/programming/galapagos'
+      alias base='cd ~/programming/base'
 
-      alias h='cd ~/programming/hadrian'
-      alias bbom='cd ~/programming/hadrian/factory/bbom'
-      alias qms='cd ~/programming/hadrian/flow/qms'
-
-      alias d='cd ~/programming/depot'
+      alias depot='cd ~/programming/depot'
       alias dotfiles='cd ~/programming/dotfiles'
 
       alias eb='vim ~/programming/dotfiles/default.nix'
