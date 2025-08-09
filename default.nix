@@ -1,6 +1,7 @@
 let
   sources = import ./third_party/sources/sources.nix;
   depot = import sources.depot { };
+  depot-local = import /Users/williamcarroll/programming/depot { };
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
   
   dotfiles = pkgs.lib.fix (self: {
@@ -36,7 +37,7 @@ let
       which
       wrk
       zellij
-      depot.users.wpcarro.tools.simple_vim
+      depot-local.users.wpcarro.tools.simple_vim
     ]);
     colors = {
       yellow  = x: x;
