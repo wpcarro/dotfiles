@@ -3,6 +3,8 @@ let
   depot = import sources.depot { };
   depot-local = import /Users/williamcarroll/programming/depot { };
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
+
+  simple_emacs = import ./simple_emacs { inherit pkgs; };
   
   dotfiles = pkgs.lib.fix (self: {
     path = pkgs.lib.makeBinPath (with pkgs; [
@@ -43,6 +45,7 @@ let
       wrk
       zellij
       depot-local.users.wpcarro.tools.simple_vim
+      simple_emacs
     ]);
     colors = {
       yellow  = x: x;
