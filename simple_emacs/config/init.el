@@ -105,5 +105,13 @@
  "M-j" nil
  "K" #'ibuffer-do-delete)
 
+;; emulating the gitui KBDs
+(general-define-key
+ :keymaps 'magit-status-mode-map
+ "<up>" #'magit-previous-line
+ "<down>" #'magit-next-line
+ "e" #'magit-diff-visit-file
+ "V" #'set-mark-command)
+
 (provide 'init)
 ;;; init.el ends here
