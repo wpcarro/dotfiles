@@ -38,7 +38,7 @@
 (define-key evil-normal-state-map "L" #'evil-end-of-line)
 
 (general-unbind 'normal "s")
-(general-unbind 'insert "C-v" "C-d" "C-a" "C-e" "C-n" "C-p" "C-k")
+(general-unbind 'insert "C-v" "C-d" "C-a" "C-e" "C-n" "C-p" "C-k" "C-r")
 
 (general-define-key
  :states 'normal
