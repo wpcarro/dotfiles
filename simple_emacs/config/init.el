@@ -7,6 +7,7 @@
 (require 'ivy)
 (require 'counsel)
 (require 'magit)
+(require 'dash)
 
 (load-theme #'modus-vivendi)
 
@@ -68,7 +69,27 @@
  "jd" '(lambda () (interactive) (find-file "~/programming/dotfiles")))
 
 (evil-set-initial-state 'vterm-mode 'insert)
-(global-set-key (kbd "C-s-t") #'vterm)
+(global-set-key (kbd "C-s-t")
+                (lambda ()
+                  (interactive)
+                  (if (eq 'vterm-mode
+                          (with-current-buffer (current-buffer) major-mode))
+                      (->> (buffer-list)
+                           (-find (lambda (x) (not (eq 'vterm-mode (with-current-buffer x major-mode)))))
+                           (switch-to-buffer))
+                    (vterm))))
+
+(general-define-key
+ :keymaps 'vterm-mode-map
+ "M-:" nil
+ "M--" #'evil-window-split
+ "M-\\" #'evil-window-vsplit
+ "C-S-n" '(lambda ()
+            (interactive)
+            (vterm (format "*vterm-%d*"
+                           (-count (lambda (x)
+                                     (eq 'vterm-mode (with-current-buffer x major-mode)))
+                                   (buffer-list))))))
 
 (general-define-key
  :keymaps 'override
@@ -77,11 +98,6 @@
  "M-h" #'windmove-left
  "M-l" #'windmove-right
  "M-q" #'delete-window)
-
-(general-define-key
- :keymaps 'vterm-mode-map
- "M--" #'evil-window-split
- "M-\\" #'evil-window-vsplit)
 
 (general-define-key
  :states 'normal
