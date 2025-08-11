@@ -12,6 +12,12 @@
 
 ;; NOTE: In Emacs :height is 1/10pt, so 120 => 12pt, 140 => 14pt
 (set-face-attribute 'default nil :family "Berkeley Mono" :height 140)
+
+;; Disable bold/italics
+(-map (lambda (x)
+        (set-face-attribute x nil :slant 'normal :weight 'normal))
+      (face-list))
+
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq-default truncate-lines t)
