@@ -9,7 +9,9 @@
 (require 'magit)
 
 (load-theme #'modus-vivendi)
-(set-face-attribute 'default nil :family "JetBrains Mono")
+
+;; NOTE: In Emacs :height is 1/10pt, so 120 => 12pt, 140 => 14pt
+(set-face-attribute 'default nil :family "Berkeley Mono" :height 140)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq-default truncate-lines t)
