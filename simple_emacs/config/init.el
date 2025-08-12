@@ -3,6 +3,7 @@
 (require 'evil)
 (require 'general)
 (require 'nix-mode)
+(require 'jsonnet-mode)
 (require 'vterm)
 (require 'ivy)
 (require 'counsel)
