@@ -54,7 +54,8 @@
  :states 'normal
  :keymaps 'dired-mode-map
  "-" #'dired-up-directory
- "f" #'project-find-file)
+ "f" #'project-find-file
+ "%" #'dired-create-empty-file)
 
 (general-define-key
  :states 'normal
