@@ -110,10 +110,17 @@
 ;; emulating the gitui KBDs
 (general-define-key
  :keymaps 'magit-status-mode-map
- "<up>" #'magit-previous-line
- "<down>" #'magit-next-line
  "e" #'magit-diff-visit-file
  "V" #'set-mark-command)
+
+(general-define-key
+ :keymaps '(magit-status-mode-map
+            magit-revision-mode-map
+            magit-log-mode-map)
+ "<up>"   #'magit-previous-line
+ "<down>" #'magit-next-line
+ "k"      #'magit-previous-line
+ "j"      #'magit-next-line)
 
 (provide 'init)
 ;;; init.el ends here
