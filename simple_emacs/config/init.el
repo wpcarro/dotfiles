@@ -5,6 +5,7 @@
 (require 'nix-mode)
 (require 'jsonnet-mode)
 (require 'vterm)
+(require 'multi-vterm)
 (require 'ivy)
 (require 'counsel)
 (require 'magit)
@@ -74,29 +75,37 @@
  "jb" '(lambda () (interactive) (find-file "~/programming/base"))
  "jd" '(lambda () (interactive) (find-file "~/programming/dotfiles")))
 
+
 (evil-set-initial-state 'vterm-mode 'insert)
+
 (global-set-key (kbd "C-s-t")
                 (lambda ()
                   (interactive)
-                  (if (eq 'vterm-mode
-                          (with-current-buffer (current-buffer) major-mode))
-                      (->> (buffer-list)
-                           (-find (lambda (x) (not (eq 'vterm-mode (with-current-buffer x major-mode)))))
-                           (switch-to-buffer))
-                    (vterm))))
+                  (-let [(lhs rhs) (-separate (lambda (x) (eq 'vterm-mode (with-current-buffer x major-mode))) (buffer-list))]
+                    (if (eq 'vterm-mode (with-current-buffer (current-buffer) major-mode))
+                        (switch-to-buffer (car rhs))
+                      (if (null lhs) (multi-vterm)
+                        (switch-to-buffer (car lhs)))))))
 
 (general-define-key
  :keymaps 'vterm-mode-map
  "M-:" nil
- "<deletechar>" #'vterm-send-delete
+ "C-<tab>" #'multi-vterm-next
+ "C-S-<tab>" #'multi-vterm-prev
  "M--" #'evil-window-split
  "M-\\" #'evil-window-vsplit
- "C-S-n" '(lambda ()
-            (interactive)
-            (vterm (format "*vterm-%d*"
-                           (-count (lambda (x)
-                                     (eq 'vterm-mode (with-current-buffer x major-mode)))
-                                   (buffer-list))))))
+ "C-S-n" #'multi-vterm)
+
+(general-define-key
+ :keymaps 'vterm-mode-map
+ :states 'insert
+ "C-u" #'vterm--self-insert
+ "C-o" #'vterm--self-insert ;; need this to close vim
+ "C-a" #'vterm--self-insert
+ "C-e" #'vterm--self-insert
+ "C-f" #'vterm--self-insert
+ "C-b" #'vterm--self-insert
+ "<deletechar>" #'vterm-send-delete)
 
 (general-define-key
  :keymaps 'override

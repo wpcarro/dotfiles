@@ -8,6 +8,7 @@ pkgs.writeShellScriptBin "simple_emacs" ''
     epkgs.ivy
     epkgs.jsonnet-mode
     epkgs.magit
+    epkgs.multi-vterm
     epkgs.nix-mode
     epkgs.vterm
   ])}/bin/emacs \
