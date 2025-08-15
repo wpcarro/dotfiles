@@ -84,6 +84,7 @@
 (general-define-key
  :keymaps 'vterm-mode-map
  "M-:" nil
+ "<deletechar>" #'vterm-send-delete
  "M--" #'evil-window-split
  "M-\\" #'evil-window-vsplit
  "C-S-n" '(lambda ()
