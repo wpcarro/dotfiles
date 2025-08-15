@@ -65,6 +65,7 @@
  "b" #'counsel-switch-buffer
  "k" #'kill-buffer
  "I" #'ibuffer
+ "hf" #'describe-function
  "gs" #'magit-status
  "ee" '(lambda () (interactive) (find-file "~/programming/dotfiles/simple_emacs/config/init.el"))
  "jb" '(lambda () (interactive) (find-file "~/programming/base"))
