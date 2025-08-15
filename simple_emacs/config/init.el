@@ -32,6 +32,9 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Support Typescript-JSX files
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . javascript-mode))
+
 (evil-mode 1)
 (ivy-mode 1)
 
