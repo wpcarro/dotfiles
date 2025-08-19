@@ -57,6 +57,8 @@
 (general-define-key
  :states 'normal
  :keymaps 'dired-mode-map
+ "M--" #'evil-window-split
+ "M-\\" #'evil-window-vsplit
  "-" #'dired-up-directory
  "f" #'project-find-file
  "%" #'dired-create-empty-file)
