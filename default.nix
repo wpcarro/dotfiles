@@ -1,7 +1,7 @@
 let
   sources = import ./third_party/sources/sources.nix;
   depot = import sources.depot { };
-  depot-local = import /Users/williamcarroll/programming/depot { };
+  depot-local = import ~/programming/depot { };
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
 
   simple_emacs = import ./simple_emacs { inherit pkgs; };
