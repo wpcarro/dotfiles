@@ -48,12 +48,19 @@ let
       depot-local.users.wpcarro.tools.simple_vim
       self.simple_emacs
     ]);
-    colors = {
-      yellow  = x: x;
-      magenta = x: x;
-      cyan    = x: x;
-      blue    = x: x;
-      red     = x: x;
+    # NOTE: This is all a bit insane in PS1, Bash needs \[ and \]
+    # around non-printing chars for proper readline behavior. Here is
+    # a breakdown of some of the codes:
+    #   - \e: Bash shorthand for ASCII escape (octal=\033, hex=\x1B)
+    #   - [:  Introduces a control sequence
+    colors = let
+      wrap = code: x: ''\[\e[${toString code}m\]${x}\[\e[0m\]'';
+    in {
+      red     = wrap 31;
+      yellow  = wrap 33;
+      blue    = wrap 34;
+      magenta = wrap 35;
+      cyan    = wrap 36;
     };
     bashrc = pkgs.writeText "bashrc" ''
       export PATH=${self.path}:${if true then "/opt/homebrew/bin:$PATH" else "$PATH"}
