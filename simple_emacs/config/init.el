@@ -113,6 +113,7 @@
 
 (general-define-key
  :keymaps 'override
+ "C-`" #'multi-vterm-dedicated-toggle ;; vscode inspiration
  "M-k" #'windmove-up
  "M-j" #'windmove-down
  "M-h" #'windmove-left
