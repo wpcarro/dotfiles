@@ -4,6 +4,7 @@ pkgs.writeShellScriptBin "simple_emacs" ''
   exec ${(pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages (epkgs: [
     epkgs.counsel
     epkgs.evil
+    epkgs.evil-nerd-commenter
     epkgs.general
     epkgs.ivy
     epkgs.jsonnet-mode

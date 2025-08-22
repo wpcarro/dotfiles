@@ -1,6 +1,7 @@
 ;;; init.el --- Initial configuration -*- lexical-binding: t; -*-
 
 (require 'evil)
+(require 'evil-nerd-commenter)
 (require 'general)
 (require 'nix-mode)
 (require 'jsonnet-mode)
@@ -37,6 +38,7 @@
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . javascript-mode))
 
 (evil-mode 1)
+(evilnc-default-hotkeys)
 (ivy-mode 1)
 
 (define-key evil-normal-state-map "-" #'dired-jump)
