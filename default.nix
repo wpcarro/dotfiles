@@ -10,6 +10,7 @@ let
     path = pkgs.lib.makeBinPath (with pkgs; [
       age
       atuin 
+      clang-tools
       coreutils 
       curl
       direnv 
