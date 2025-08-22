@@ -130,7 +130,8 @@
 (general-define-key
  :keymaps 'magit-status-mode-map
  "e" #'magit-diff-visit-file
- "V" #'set-mark-command)
+ "V" #'set-mark-command
+ "D" #'magit-delete-thing)
 
 (general-define-key
  :keymaps '(magit-status-mode-map
