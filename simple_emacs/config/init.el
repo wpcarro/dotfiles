@@ -28,7 +28,7 @@
 (setq-default truncate-lines t)
 (setq scroll-step 1)
 (setq dired-listing-switches "-al --group-directories-first")
-(setq-default c-basic-offset 4)
+(setq-default c-basic-offset 2) ;; clang-format --style=Google
 (setq-default indent-tabs-mode nil)
 (setq initial-buffer-choice (format "%s/programming/base" (getenv "HOME")))
 (menu-bar-mode -1)
