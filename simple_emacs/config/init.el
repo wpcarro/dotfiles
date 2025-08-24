@@ -1,5 +1,6 @@
 ;;; init.el --- Initial configuration -*- lexical-binding: t; -*-
 
+(require 'avy)
 (require 'evil)
 (require 'evil-nerd-commenter)
 (require 'general)
@@ -113,6 +114,7 @@
 
 (general-define-key
  :keymaps 'override
+ "C-:" #'avy-goto-char
  "C-`" #'multi-vterm-dedicated-toggle ;; vscode inspiration
  "M-k" #'windmove-up
  "M-j" #'windmove-down
