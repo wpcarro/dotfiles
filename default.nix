@@ -111,7 +111,7 @@ let
       [ -f $HOME/secrets.sh ] && source $HOME/secrets.sh
 
       # prompt
-      export PS1="${self.colors.red "["}${self.colors.blue "\\u"}${self.colors.yellow "@"}${self.colors.magenta "\\h"}${self.colors.red "]"} ${self.colors.cyan "\\w"}\n\t ${self.colors.cyan "λ"} "
+      export PS1="${self.colors.red "["}${self.colors.blue "\\u"}${self.colors.yellow "@"}${self.colors.magenta "\\h"}${self.colors.red "]"} ${self.colors.cyan "\\w"}\n\t ${self.colors.yellow "λ"} "
     '';
 
     shell = pkgs.writeShellScriptBin "billsh" ''
