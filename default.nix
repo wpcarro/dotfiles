@@ -10,6 +10,7 @@ let
     path = pkgs.lib.makeBinPath (with pkgs; [
       age
       atuin 
+      cargo
       clang-tools
       coreutils 
       curl
