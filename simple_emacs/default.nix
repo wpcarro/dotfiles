@@ -12,6 +12,7 @@ pkgs.writeShellScriptBin "simple_emacs" ''
     epkgs.magit
     epkgs.multi-vterm
     epkgs.nix-mode
+    epkgs.rust-mode
     epkgs.vterm
   ])}/bin/emacs \
     --debug-init \
