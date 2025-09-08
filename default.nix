@@ -112,7 +112,11 @@ let
       [ -f $HOME/secrets.sh ] && source $HOME/secrets.sh
 
       # prompt
-      export PS1="${self.colors.red "["}${self.colors.blue "\\u"}${self.colors.yellow "@"}${self.colors.magenta "\\h"}${self.colors.red "]"} ${self.colors.cyan "\\w"}\n\t ${self.colors.yellow "λ"} "
+      fmt_git_branch() {
+        x=$(git branch --show-current 2>/dev/null)
+        [ -n "$x" ] && printf "[%s]" "$x"
+      }
+      export PS1='${self.colors.red "["}${self.colors.blue "\\u"}${self.colors.yellow "@"}${self.colors.magenta "\\h"}${self.colors.red "]"} ${self.colors.cyan "\\w"} $(fmt_git_branch)\n\t ${self.colors.yellow "λ"} '
     '';
 
     shell = pkgs.writeShellScriptBin "billsh" ''
