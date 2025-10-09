@@ -1,9 +1,9 @@
 {
-  "depot": {
-      "branch": "canon",
-      "repo": "https://code.tvl.fyi/depot.git",
-      "rev": "b59561b9b1cefa1b3a892e4cfd93fcef0d623969",
-      "submodules": false,
-      "type": "git"
-  }
+    "depot": {
+        "branch": "canon",
+        "repo": "https://code.tvl.fyi/depot.git",
+        "rev": "d7d0b7cc17972bd77b437da7ecf37f3bada44572",
+        "submodules": false,
+        "type": "git"
+    }
 }
