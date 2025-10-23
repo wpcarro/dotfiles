@@ -1,7 +1,8 @@
 let
   sources = import ./third_party/sources/sources.nix;
   depot = import sources.depot { };
-  depot-local = import ~/programming/depot { };
+  # Use a local clone of depot if it exists or fallback to depot.
+  depot-local = if builtins.pathExists ~/programming/depot then import ~/programming/depot { } else depot;
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
   
   dotfiles = pkgs.lib.fix (self: {
