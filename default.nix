@@ -92,7 +92,7 @@ let
       alias gpf='git push --force'
       alias gcan='git commit --amend --no-edit --no-verify'
       alias gca='git commit --amend --no-verify'
-      alias gcf='git commit --fixup'
+      alias gcf='git commit --fixup --no-verify'
       alias gcp='git cherry-pick'
       alias gds='git diff --staged'
       alias gsh='git show HEAD'
