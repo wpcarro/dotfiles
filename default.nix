@@ -1,12 +1,11 @@
 let
   sources = import ./third_party/sources/sources.nix;
   depot = import sources.depot { };
-  # Use a local clone of depot if it exists or fallback to depot.
-  depot-local = if builtins.pathExists ~/programming/depot then import ~/programming/depot { } else depot;
   pkgs = depot.third_party.nixpkgs // { inherit depot; };
   
   dotfiles = pkgs.lib.fix (self: {
     simple_emacs = import ./simple_emacs { inherit pkgs; };
+    simple_vim = import ./simple_vim { inherit pkgs; };
 
     path = pkgs.lib.makeBinPath (with pkgs; [
       age
@@ -47,8 +46,8 @@ let
       which
       wrk
       zellij
-      depot-local.users.wpcarro.tools.simple_vim
       self.simple_emacs
+      self.simple_vim
     ]);
     # NOTE: This is all a bit insane in PS1, Bash needs \[ and \]
     # around non-printing chars for proper readline behavior. Here is
