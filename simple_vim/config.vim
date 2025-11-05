@@ -39,7 +39,7 @@ nnoremap <leader>t :tab terminal billsh<CR>i
 nnoremap <leader>p :new \| r !git ls-files<CR>
 
 " Visit the CWD
-nnoremap - :e .<CR>
+nnoremap - :e %:h<CR>
 
 " Turn line numbers on.
 set number
