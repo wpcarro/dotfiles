@@ -39,6 +39,7 @@ let
       nmap
       openssh
       ripgrep 
+      tcpdump
       tokei
       tree
       tshark
