@@ -35,7 +35,8 @@ let
       submodules = spec.submodules or false;
       submoduleArg =
         let
-          nixSupportsSubmodules = builtins.compareVersions builtins.nixVersion "2.4" >= 0;
+          # nixSupportsSubmodules = builtins.compareVersions builtins.nixVersion "2.4" >= 0;
+          nixSupportsSubmodules = false;
           emptyArgWithWarning =
             if submodules
             then

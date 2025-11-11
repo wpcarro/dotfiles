@@ -35,7 +35,8 @@ let
       jsonnet
       less
       netcat
-      # nix
+      niv
+      nix
       nmap
       openssh
       ripgrep 
