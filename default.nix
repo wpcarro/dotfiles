@@ -9,7 +9,6 @@ let
 
     path = pkgs.lib.makeBinPath (with pkgs; [
       age
-      atuin 
       cargo
       clang-tools
       coreutils 
@@ -116,8 +115,7 @@ let
         # apps
         eval "$(direnv hook bash)"
         source $HOME/.nix-profile/etc/profile.d/nix.sh
-        source ${pkgs.bash-preexec}/share/bash/bash-preexec.sh
-        eval "$(atuin init bash)"
+        eval "$(fzf --bash)"
 
         # sensitive cleartext
         [ -f $HOME/secrets.sh ] && source $HOME/secrets.sh
