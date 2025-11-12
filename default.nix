@@ -35,6 +35,7 @@ let
       jsonnet
       lazydocker
       less
+      lf
       netcat
       niv
       nix
