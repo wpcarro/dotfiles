@@ -33,6 +33,7 @@ let
       httpie
       jq
       jsonnet
+      lazydocker
       less
       netcat
       niv
