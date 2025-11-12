@@ -84,7 +84,7 @@ let
         alias dotfiles='cd ~/programming/dotfiles'
 
         alias eb='vim ~/programming/dotfiles/default.nix'
-        alias sb='nix-env -f ~/programming/dotfiles -iA dotfiles.shell && exec billsh'
+        alias sb='nix-env -f ~/programming/dotfiles -iA dotfiles.bashrc && source ~/.bashrc'
         alias la='ls -al'
         alias rgh='rg --hidden'
         alias tpr='tput reset'
