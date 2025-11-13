@@ -19,6 +19,7 @@ pkgs.writeShellScriptBin "simple_emacs" ''
     --no-site-file \
     --no-site-lisp \
     --no-init-file \
+    --no-window-system \
     --directory ~/programming/dotfiles/simple_emacs/config \
     --eval "(require 'init)" $@
 ''

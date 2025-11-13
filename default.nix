@@ -109,7 +109,8 @@ let
         alias gpr='gh pr create --title="$(git log -1 --format=%s)" --body="$(git log -1 --format=%b)"'
 
         alias vim='simple_vim'
-        export EDITOR=${depot.users.wpcarro.tools.simple_vim}/bin/simple_vim
+        alias emacs='simple_emacs'
+        export EDITOR=${self.simple_emacs}/bin/simple_emacs
         export GIT_EDITOR=$EDITOR
 
         # apps
