@@ -28,7 +28,7 @@
 (setq dired-listing-switches "-al --group-directories-first")
 (setq-default c-basic-offset 2) ;; clang-format --style=Google
 (setq-default indent-tabs-mode nil)
-(setq initial-buffer-choice (format "%s/programming/base" (getenv "HOME")))
+(setq initial-buffer-choice nil)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
