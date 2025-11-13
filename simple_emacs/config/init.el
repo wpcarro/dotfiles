@@ -112,7 +112,7 @@
 
 (general-define-key
  :keymaps 'override
- "C-:" #'avy-goto-char
+ "M-:" #'avy-goto-char
  "C-`" #'multi-vterm-dedicated-toggle ;; vscode inspiration
  "M-k" #'windmove-up
  "M-j" #'windmove-down
