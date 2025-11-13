@@ -38,6 +38,7 @@
 
 (evil-mode 1)
 (evilnc-default-hotkeys)
+(setq evil-symbol-word-search t)
 (ivy-mode 1)
 
 (define-key evil-normal-state-map "-" #'dired-jump)
