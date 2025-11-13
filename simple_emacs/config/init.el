@@ -142,5 +142,8 @@
  "k"      #'magit-previous-line
  "j"      #'magit-next-line)
 
+;; Reuse the current buffer when opening magit-status
+(setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
+
 (provide 'init)
 ;;; init.el ends here
