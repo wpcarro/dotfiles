@@ -14,7 +14,7 @@
 (require 'dash)
 
 ;; NOTE: In Emacs :height is 1/10pt, so 120 => 12pt, 140 => 14pt
-(set-face-attribute 'default nil :family "Berkeley Mono" :height 110)
+(set-face-attribute 'default nil :family "CaskaydiaMono Nerd Font" :height 150)
 
 ;; Disable bold/italics
 (-map (lambda (x)
