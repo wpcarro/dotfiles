@@ -9,6 +9,7 @@ pkgs.writeShellScriptBin "simple_emacs" ''
     epkgs.general
     epkgs.ivy
     epkgs.jsonnet-mode
+    epkgs.lsp-mode
     epkgs.magit
     epkgs.multi-vterm
     epkgs.nix-mode

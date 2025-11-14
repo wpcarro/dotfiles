@@ -13,6 +13,23 @@
 (require 'magit)
 (require 'dash)
 
+;; NOTE: Even though I use nix to build and manage my Emacs
+;; configuration sometimes I like to try packages out without doing a
+;; full nix-build and restarting my Emacs session and breaking
+;; context.
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+(require 'lsp-mode)
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+(setq lsp-idle-delay 0.1)
+
+(require 'company)
+(setq company-idle-delay 0.0
+      company-minimum-prefix-length 1)
+
 ;; NOTE: In Emacs :height is 1/10pt, so 120 => 12pt, 140 => 14pt
 (set-face-attribute 'default nil :family "CaskaydiaMono Nerd Font" :height 150)
 
