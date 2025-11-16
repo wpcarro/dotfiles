@@ -3,6 +3,7 @@
 pkgs.writeShellScriptBin "simple_emacs" ''
   exec ${(pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages (epkgs: [
     epkgs.avy
+    epkgs.company
     epkgs.counsel
     epkgs.evil
     epkgs.evil-nerd-commenter
