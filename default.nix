@@ -110,7 +110,7 @@ let
 
         alias vim='simple_vim'
         alias emacs='simple_emacs'
-        export EDITOR=${self.simple_emacs}/bin/simple_emacs
+        export EDITOR=${self.simple_vim}/bin/simple_vim
         export GIT_EDITOR=$EDITOR
 
         # apps

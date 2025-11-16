@@ -21,6 +21,13 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; Settings for GUI versus terminal
+(if (display-graphic-p)
+    (progn
+      (load-theme 'modus-vivendi)
+      (setq initial-buffer-choice "~/programming/base"))
+  (setq initial-buffer-choice nil))
+
 (require 'lsp-mode)
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
@@ -45,7 +52,6 @@
 (setq dired-listing-switches "-al --group-directories-first")
 (setq-default c-basic-offset 2) ;; clang-format --style=Google
 (setq-default indent-tabs-mode nil)
-(setq initial-buffer-choice nil)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -130,7 +136,7 @@
 
 (general-define-key
  :keymaps 'override
- "M-:" #'avy-goto-char
+ "C-;" #'avy-goto-char
  "C-`" #'multi-vterm-dedicated-toggle ;; vscode inspiration
  "M-k" #'windmove-up
  "M-j" #'windmove-down
