@@ -45,8 +45,9 @@
         (set-face-attribute x nil :slant 'normal :weight 'normal))
       (face-list))
 
-(setq make-backup-files nil)
-(setq auto-save-default nil)
+(setq make-backup-files nil) ;; #foo#
+(setq auto-save-default nil) ;; foo~
+(setq create-lockfiles nil)  ;; .#foo
 (setq-default truncate-lines t)
 (setq scroll-step 1)
 (setq dired-listing-switches "-al --group-directories-first")
