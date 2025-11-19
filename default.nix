@@ -88,6 +88,10 @@ let
         alias rgh='rg --hidden'
         alias tpr='tput reset'
 
+        # NOTE: These only work on Linux systems running X
+        alias pbcopy='xclip -selection clipboard'
+        alias pbpaste='xclip -selection clipboard -o'
+
         alias gst='git status'
         alias gd='git diff'
         alias gco='git checkout'
