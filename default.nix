@@ -7,6 +7,24 @@ let
     simple_emacs = import ./simple_emacs { inherit pkgs; };
     simple_vim = import ./simple_vim { inherit pkgs; };
 
+    # Extend your gitconfig by adding this to your ~/.gitconfig:
+    #   [include]
+    #       path = ~/.nix-profile/etc/gitconfig
+    gitconfig = pkgs.writeTextFile {
+      name = "gitconfig";
+      destination = "/etc/gitconfig";
+      text = ''
+        [user]
+            name = William Carroll
+            email = wpcarro@gmail.com
+        [pull]
+            rebase = true
+        [rebase]
+            autoStash = true
+            updateRefs = true
+      '';
+    };
+
     path = pkgs.lib.makeBinPath (with pkgs; [
       age
       cargo
