@@ -117,9 +117,13 @@ let
         export EDITOR=${self.simple_vim}/bin/simple_vim
         export GIT_EDITOR=$EDITOR
 
+        # This only exists on machines with single-user installs
+        if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+          source $HOME/.nix-profile/etc/profile.d/nix.sh
+        fi
+
         # apps
         eval "$(direnv hook bash)"
-        source $HOME/.nix-profile/etc/profile.d/nix.sh
         eval "$(fzf --bash)"
 
         # sensitive cleartext
