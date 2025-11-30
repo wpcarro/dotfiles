@@ -24,7 +24,8 @@
 ;; Settings for GUI versus terminal
 (if (display-graphic-p)
     (progn
-      (load-theme 'modus-vivendi)
+      (require 'doom-themes)
+      (load-theme 'doom-outrun-electric t)
       (setq initial-buffer-choice "~/programming/base"))
   (setq initial-buffer-choice nil))
 

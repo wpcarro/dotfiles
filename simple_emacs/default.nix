@@ -5,6 +5,7 @@ pkgs.writeShellScriptBin "simple_emacs" ''
     epkgs.avy
     epkgs.company
     epkgs.counsel
+    epkgs.doom-themes
     epkgs.evil
     epkgs.evil-nerd-commenter
     epkgs.general
