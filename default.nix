@@ -63,6 +63,7 @@ let
       tokei
       tree
       tshark
+      uv
       vim
       which
       wrk
@@ -143,6 +144,7 @@ let
         # apps
         eval "$(direnv hook bash)"
         eval "$(fzf --bash)"
+        # export PATH="$HOME/.local/bin:$PATH" # uv
 
         # sensitive cleartext
         [ -f $HOME/secrets.sh ] && source $HOME/secrets.sh
