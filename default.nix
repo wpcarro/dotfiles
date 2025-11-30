@@ -93,7 +93,7 @@ let
       name = "bashrc";
       destination = "/etc/bashrc";
       text = ''
-        export PATH=${self.path}:${if true then "/opt/homebrew/bin:$PATH" else "$PATH"}
+        export PATH=${self.path}:$PATH
 
         alias m='cd ~/programming/matrix'
         alias base='cd ~/programming/base'
