@@ -37,8 +37,10 @@
 (setq company-idle-delay 0.0
       company-minimum-prefix-length 1)
 
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
+
 ;; NOTE: In Emacs :height is 1/10pt, so 120 => 12pt, 140 => 14pt
-(set-face-attribute 'default nil :family "CaskaydiaMono Nerd Font" :height 150)
+(set-face-attribute 'default nil :family "Berkeley Mono" :height 110)
 
 ;; Disable bold/italics
 (-map (lambda (x)
